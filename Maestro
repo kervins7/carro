@@ -1,0 +1,29 @@
+#include <Esplora.h>
+#include<SoftwareSerial.h>
+
+SoftwareSerial BT(8, 7);
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  BT.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ 
+  int adelante= Esplora.readButton(SWITCH_UP);
+  if(adelante==LOW)
+  {
+    BT.print("a");
+    delay(100);
+  }
+  
+  int atras= Esplora.readButton(SWITCH_DOWN);
+  if(atras==LOW)
+  {
+    BT.print("b");
+    delay(100);
+  }
+ 
+}
