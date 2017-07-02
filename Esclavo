@@ -1,0 +1,57 @@
+#include <SoftwareSerial.h>
+#include <AFMotor.h>
+SoftwareSerial BT(2, 3); //tx,rx
+
+
+AF_DCMotor motorA(1);
+
+void setup() {
+  
+
+  Serial.begin(9600);
+  BT.begin(9600);
+motorA.setSpeed(250);
+}
+void moverDerecha(){
+  
+}
+void moverIzquierda(){
+  
+}
+void moverAdelante(){
+  motorA.run(FORWARD);
+}
+void moverAtras(){
+  motorA.run(BACKWARD);
+}
+void parar(){
+motorA.run(RELEASE);  
+}
+void loop() {
+  // put your main code here, to run repeatedly:
+  while (BT.available() > 0) {
+    char dataIn = BT.read();
+   
+    
+    if ( dataIn == 'i') {
+     
+      delay(1000);
+      moverIzquierda();
+    }
+    
+    else if ( dataIn == 'b') {
+      //digitalWrite(led,LOW);
+      moverAtras();
+    }
+   
+     
+    else if ( dataIn == 'a') {
+     
+      moverAdelante();
+    } 
+    
+    else {
+      parar();
+    }
+  }
+}
