@@ -12,14 +12,14 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
  
-  int adelante= Esplora.readButton(SWITCH_UP);
+  int adelante= Esplora.readButton(SWITCH_3);
   if(adelante==LOW)
   {
     BT.print("a");
     delay(100);
   }
   
-  int atras= Esplora.readButton(SWITCH_DOWN);
+  int atras= Esplora.readButton(SWITCH_1);
   if(atras==LOW)
   {
     BT.print("b");
