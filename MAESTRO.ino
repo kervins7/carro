@@ -20,27 +20,22 @@ void loop() {
 if(xderecha>300)
 {
   BT.print("d");
-  }else if(xizquierda<-300)
+  }
+  if(xizquierda<-300)
   {
     BT.print("i");
     } 
-    
-if (adelante==HIGH && atras==HIGH)
-  {
-    BT.print("x");
-  }
-else if (adelante==LOW && atras==LOW)
-  {
-    BT.print("y");
-  }
-else if (adelante==LOW && atras==HIGH)
+  
+
+ if (adelante==LOW && atras==HIGH)
   {
     BT.print("a");
   }
-else if (adelante==HIGH  && atras==LOW)
+ if (adelante==HIGH  && atras==LOW)
   {
     BT.print("b");
   }  
+  delay(10);
  }
 
 
