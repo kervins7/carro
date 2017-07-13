@@ -14,10 +14,12 @@ motorA.setSpeed(250);
 
 void moverDerecha(){
  
+      servo1.write(0);
 }
 
 void moverIzquierda(){
 
+      servo1.write(180);
 }
 
 void moverAdelante(){
@@ -34,11 +36,11 @@ motorA.run(RELEASE);
 
 void loop() {
   
-  while (BT.available() > 0) {
+  if (BT.available() > 0) {
     char dataIn = BT.read();
     
     if ( dataIn == 'i') {
-      servo1.write(0);
+       moverIzquierda();
       delay(15);
  
      }
@@ -50,7 +52,7 @@ void loop() {
     }
     
     else if (dataIn == 'd') {
-     servo1.write(180);
+   moverDerecha();
      delay(15);
     }
      
@@ -60,18 +62,6 @@ void loop() {
       delay(15);
     }
 
-    
-    else if ( dataIn == 'x') {
-      parar();
-      servo1.write(90);
-      delay(15);
-    }
-
-    else if ( dataIn == 'y') {
-      parar();
-      servo1.write(90);
-      delay(15);
-    }
  
    else {
       parar();
