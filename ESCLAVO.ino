@@ -48,25 +48,25 @@ void loop() {
     else if ( dataIn == 'b') {
       moverAtras();
       servo1.write(90);
-      delay(15);
+      delay(10);
     }
     
     else if (dataIn == 'd') {
    moverDerecha();
-     delay(15);
+     delay(10);
     }
      
     else if ( dataIn == 'a') {
       moverAdelante();
-      servo1.write(90);
       delay(15);
-    }
+    }  else if ( dataIn == '1') {
+      servo1.write(90);
+    } 
 
  
    else {
       parar();
-      servo1.write(90);
-      delay(15);
+      delay(10;
     }
   }
 }
