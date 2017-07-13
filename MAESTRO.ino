@@ -1,5 +1,4 @@
 #include <Esplora.h>
-#include <Mouse.h>
 #include<SoftwareSerial.h>
 
 SoftwareSerial BT(8,7);
@@ -7,7 +6,6 @@ SoftwareSerial BT(8,7);
 void setup() {
   Serial.begin(9600);
   BT.begin(9600);
-   Mouse.begin();
 }
 
 void loop() {
