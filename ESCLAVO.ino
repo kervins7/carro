@@ -66,7 +66,7 @@ void loop() {
  
    else {
       parar();
-      delay(10;
+      delay(10);
     }
   }
 }
