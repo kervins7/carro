@@ -19,12 +19,15 @@ void loop() {
 
 if(xderecha>300)
 {
-  BT.println("d");
+  BT.print("d");
   }
-  if(xizquierda<-300)
+  else if(xizquierda<-300)
   {
-    BT.println("i");
-    } 
+    BT.print("i");
+    }
+  else{
+    BT.print('q');
+  }
   
 
  if (adelante==LOW && atras==HIGH)
