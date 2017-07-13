@@ -4,6 +4,7 @@
 SoftwareSerial BT(2, 3); //Rx,Tx
 AF_DCMotor motorA(1);
 Servo servo1;
+boolean flag = false;
 
 void setup() {
    servo1.attach(10,600,1500);
@@ -42,17 +43,22 @@ void loop() {
     if ( dataIn == 'i') {
        moverIzquierda();
       delay(15);
+       flag = false;
  
      }
     
     else if ( dataIn == 'b') {
       moverAtras();
+       if(flag == false){
       servo1.write(90);
+       flag = true;
+       }
       delay(10);
     }
     
     else if (dataIn == 'd') {
    moverDerecha();
+       flag = false;
      delay(10);
     }
      
